@@ -1,0 +1,44 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tracking Page - Sina Shipping</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f0f0; padding: 20px; }
+    .container { max-width: 400px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
+    h2 { text-align: center; color: #333; }
+    input[type="text"] { width: 100%; padding: 10px; margin: 10px 0; font-size: 16px; }
+    button { width: 100%; padding: 10px; background: #007bff; color: white; border: none; font-size: 16px; cursor: pointer; border-radius: 4px; }
+    button:hover { background: #0056b3; }
+    .result { margin-top: 20px; font-size: 16px; color: #555; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Sina Shipping Tracking</h2>
+    <input type="text" id="trackingNumber" placeholder="Enter Tracking Number" />
+    <button onclick="track()">Track</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function track() {
+      const num = document.getElementById('trackingNumber').value.trim();
+      const resultDiv = document.getElementById('result');
+
+      if(num === '3690_sina') {
+        resultDiv.innerHTML = `
+<p>Shipment Status: In transit</p>
+          <p>Origin: United Arab Emirates</p>
+          <p>Destination: South Africa</p>
+          <p>Estimated Arrival: In 29 days</p>
+        `;
+      } else {
+        resultDiv.textContent = 'Tracking number not found. Please try again.';
+      }
+    }
+  </script>
+</body>
+</html>
+```
